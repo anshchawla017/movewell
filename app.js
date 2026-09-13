@@ -12,6 +12,11 @@ app.use(express.json());
 // directly by the platform, this function only ever receives /api/* traffic.)
 app.use(express.static(path.join(__dirname)));
 
+// Send visitors straight to the login page when they open the bare domain.
+app.get('/', (req, res) => {
+  res.redirect('/login.html');
+});
+
 const GROQ_KEY = process.env.GROQ_API_KEY;
 const KEY_MISSING = !GROQ_KEY || GROQ_KEY === 'your_groq_api_key_here';
 
