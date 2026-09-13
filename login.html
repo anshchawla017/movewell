@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Move Well | User Details</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:white;
+
+}
+
+.formContainer{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:40px;
+border-radius:20px;
+width:360px;
+max-width:92vw;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.formContainer h2{
+
+text-align:center;
+margin-bottom:25px;
+letter-spacing:1px;
+
+}
+
+.formContainer input,
+.formContainer select{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:15px;
+
+border:none;
+border-radius:8px;
+
+outline:none;
+
+}
+
+.formContainer button{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:8px;
+
+background:#4CAF50;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.formContainer button:hover{
+
+background:#3e8e41;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="formContainer">
+
+<h2>User Information</h2>
+
+<form onsubmit="saveUser(event)">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="number" placeholder="Age" required>
+
+<select required>
+
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+
+</select>
+
+<input type="number" placeholder="Height (cm)" required>
+
+<input type="number" placeholder="Weight (kg)" required>
+
+<button type="submit">Continue</button>
+
+</form>
+
+</div>
+
+
+<script>
+
+function saveUser(e){
+
+e.preventDefault();
+
+const name = document.getElementById("name").value;
+
+localStorage.setItem("moveWellUser", name);
+
+window.location.href = "index.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
