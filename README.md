@@ -6,11 +6,13 @@ A simple web app that gives AI-powered physiotherapy guidance (chatbot, symptom 
 
 | File          | Purpose                                   |
 |---------------|--------------------------------------------|
-| `server.js`   | Express backend, talks to the Groq AI API |
+| `app.js`      | The actual Express app + AI routes         |
+| `server.js`   | Local dev entry point — run `node server.js` |
+| `api/index.js`| Vercel serverless entry point (don't run directly) |
 | `index.html`  | Main website                              |
 | `login.html`  | User profile / details page               |
 | `.env.example`| Template for your API key (copy to `.env`)|
-| `vercel.json` | Config so this deploys correctly on Vercel|
+| `vercel.json` | Routes only `/api/*` to the function, everything else is served as static files |
 
 ## Run it locally
 
