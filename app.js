@@ -65,8 +65,9 @@ app.post('/api/claude', async (req, res) => {
         body: JSON.stringify({
           model: 'openai/gpt-oss-20b',
           messages: groqMessages,
-          max_tokens: 800,
-          temperature: 0.7
+          max_tokens: 1200,
+          temperature: 0.7,
+          reasoning_effort: 'low'
         })
       });
     } catch (networkErr) {
